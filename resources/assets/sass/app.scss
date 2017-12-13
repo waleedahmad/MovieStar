@@ -1,0 +1,34 @@
+@import "design";
+@import "font-face";
+@import "font-awesome";
+@import "material-icons";
+
+
+.admin{
+  padding-top: 72px;
+
+  .admin-sidebar{
+    padding: 0px;
+
+    a{
+      display:block;
+      width: 100%;
+      height: 65px;
+      padding: 20px;
+      color:#ec7532;
+      text-decoration: none;
+      font-size: 18px;
+
+      &.active, &:hover{
+        color:white;
+        background-color:#ec7532;
+      }
+    }
+  }
+
+  .content{
+    padding-top: 20px;
+  }
+
+}
+
