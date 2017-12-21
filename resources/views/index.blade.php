@@ -12,6 +12,8 @@
                     <li data-target="#hero" data-slide-to="2"></li>
                 </ol>
             </div>
+
+            {{--Slider--}}
             <div class="carousel-inner">
                 <div class="item active" style="background-image: url(img/hero-1.jpg)">
                     <div class="container">
@@ -24,7 +26,7 @@
 								<span class="certificate">
 									PG
 								</span>
-                                    <a href="#" data-vbtype="video" class="venobox btn btn-default vbox-item">
+                                    <a href="https://youtu.be/MAdjixN2Od8" data-vbtype="video" class="venobox btn btn-default vbox-item">
                                         <i class="material-icons">play_arrow</i>
                                         <span>Play trailer</span>
                                     </a>
@@ -44,7 +46,7 @@
 								<span class="certificate">
 									15
 								</span>
-                                    <a href="#" data-vbtype="video" class="venobox btn btn-default vbox-item">
+                                    <a href="https://youtu.be/d96cjJhvlMA" data-vbtype="video" class="venobox btn btn-default vbox-item">
                                         <i class="material-icons">play_arrow</i>
                                         <span>Play trailer</span>
                                     </a>
@@ -64,7 +66,7 @@
 								<span class="certificate">
 									PG
 								</span>
-                                    <a href="#" data-vbtype="video" class="venobox btn btn-default vbox-item">
+                                    <a href="https://youtu.be/d96cjJhvlMA" data-vbtype="video" class="venobox btn btn-default vbox-item">
                                         <i class="material-icons">play_arrow</i>
                                         <span>Play trailer</span>
                                     </a>
@@ -75,6 +77,8 @@
                 </div>
             </div>
         </div>
+
+        {{--New in--}}
         <div class="container section">
             <div class="row">
                 <div class="col-sm-12">
@@ -84,7 +88,7 @@
                             <div class="movie-poster">
                                 <aside>
                                     <div>
-                                        <a href="#" data-vbtype="video" class="venobox play vbox-item">
+                                        <a href="https://youtu.be/d96cjJhvlMA" data-vbtype="video" class="venobox play vbox-item">
                                             <i class="material-icons">play_arrow</i>
                                         </a>
                                         <a href="#" class="read-more">read more</a>
@@ -132,7 +136,7 @@
                             <div class="movie-poster">
                                 <aside>
                                     <div>
-                                        <a href="#" data-vbtype="video" class="venobox play vbox-item">
+                                        <a href="https://youtu.be/d96cjJhvlMA" data-vbtype="video" class="venobox play vbox-item">
                                             <i class="material-icons">play_arrow</i>
                                         </a>
                                         <a href="#" class="read-more">read more</a>
@@ -156,7 +160,7 @@
                             <div class="movie-poster">
                                 <aside>
                                     <div>
-                                        <a href="#" data-vbtype="video" class="venobox play vbox-item">
+                                        <a href="https://youtu.be/d96cjJhvlMA" data-vbtype="video" class="venobox play vbox-item">
                                             <i class="material-icons">play_arrow</i>
                                         </a>
                                         <a href="#" class="read-more">read more</a>
@@ -180,7 +184,7 @@
                             <div class="movie-poster">
                                 <aside>
                                     <div>
-                                        <a href="#" data-vbtype="video" class="venobox play vbox-item">
+                                        <a href="https://youtu.be/d96cjJhvlMA" data-vbtype="video" class="venobox play vbox-item">
                                             <i class="material-icons">play_arrow</i>
                                         </a>
                                         <a href="#" class="read-more">read more</a>
@@ -204,6 +208,9 @@
                 </div>
             </div>
         </div>
+
+
+        {{--What's on--}}
         <div class="container section">
             <div class="row">
                 <div class="col-sm-12">
@@ -1075,6 +1082,9 @@
                 </div>
             </div>
         </div>
+
+
+        {{--Coming So--}}
         <section class="dark">
             <div class="container section remove-bottom-padding">
                 <div class="row comingSoon-slides">

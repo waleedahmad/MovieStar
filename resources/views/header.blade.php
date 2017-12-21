@@ -50,13 +50,19 @@
                     <a href="/contact">Contact</a>
                 </li>
 
-                <li>
-                    <a href="/login">Login</a>
-                </li>
+                @if(Auth::checK())
+                    <li>
+                        <a href="/logout">Logout</a>
+                    </li>
+                @else
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
 
-                <li>
-                    <a href="/register">Register</a>
-                </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

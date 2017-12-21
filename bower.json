@@ -25,6 +25,7 @@
     "Headhesive.js": "headhesive#^1.2.4",
     "matchHeight": "matchheight#^0.7.2",
     "modernizr": "^3.5.0",
-    "gmap3": "^7.2.0"
+    "gmap3": "^7.2.0",
+    "components-font-awesome": "^4.7.0"
   }
 }

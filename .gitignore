@@ -13,3 +13,4 @@ yarn-error.log
 .sass-cache
 public/lib
 public/assets
+!/storage/app/public/default/

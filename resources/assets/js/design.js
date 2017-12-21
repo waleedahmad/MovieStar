@@ -1,7 +1,7 @@
-jQuery(function ($) {
+$(function ($) {
     "use strict";
-    var options = {offset: 600, classes: {clone: 'banner--clone', stick: 'banner--stick', unstick: 'banner--unstick'}};
-    var banner = new Headhesive('.navbar', options);
+    let options = {offset: 600, classes: {clone: 'banner--clone', stick: 'banner--stick', unstick: 'banner--unstick'}};
+    let banner = new Headhesive('.navbar', options);
     $('.bs-carousel').carousel({interval: 10000, pause: "hover"});
     if ($(".tabs").length > 0) {
         $('.tabs').tabs();
@@ -59,33 +59,33 @@ jQuery(function ($) {
             responsive: [{breakpoint: 768, settings: {slidesToShow: 2}}, {breakpoint: 480, settings: {slidesToShow: 1}}]
         });
     });
-    var $nav = $('.nav').height();
+    let $nav = $('.nav').height();
     $('.nav').css('margin-top', -$nav / 2);
     $(window).on('load resize scroll', function () {
-        var $heading = $('.wrapper .heading').outerHeight();
-        var $navbar = $('.wrapper .navbar-header').outerHeight();
+        let $heading = $('.wrapper .heading').outerHeight();
+        let $navbar = $('.wrapper .navbar-header').outerHeight();
         $('#hero .item, #hero.single-page .blurb, #hero.error-page .container').css('padding-top', $heading + $navbar);
-        var $window = $(window).height();
+        let $window = $(window).height();
         $('#hero').css('height', window.innerHeight - 50);
         $('#hero.error-page').css('height', window.innerHeight);
     });
 
-    var $rows = $('.movie-tabs');
-    jQuery('#search').keyup(function () {
-        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    let $rows = $('.movie-tabs');
+    $('#search').keyup(function () {
+        let val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
         $rows.show().filter(function () {
-            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+            let text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
         }).hide();
     });
-    jQuery('.single-slide').first().css({
+    $('.single-slide').first().css({
         opacity: '1',
         height: 'auto',
         paddingBottom: '40px'
     }).siblings('.single-slide').css({opacity: '0', height: '0', paddingBottom: '0'});
-    jQuery('#comingSoon div').first().css('opacity', '1').siblings().css('opacity', '.35');
-    jQuery('#comingSoon div').click(function () {
-        var currentClass = $(this).data("dynamicclass");
+    $('#comingSoon div').first().css('opacity', '1').siblings().css('opacity', '.35');
+    $('#comingSoon div').click(function () {
+        let currentClass = $(this).data("dynamicclass");
         $("div." + currentClass).css({
             opacity: '1',
             height: 'auto',

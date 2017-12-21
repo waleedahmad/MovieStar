@@ -65,7 +65,7 @@ h2:after, h3:after, h4:after, h5:after {
   right: auto;
   bottom: -1px;
   display: block;
-  width: 125px;
+  width: 100%;
   height: 4px;
   content: '';
   background-image: linear-gradient(to right, #fbbd61, #ec7532);
@@ -1862,13 +1862,14 @@ form label {
   color: #4a4a4a;
 }
 
-form input, form textarea {
+form input, form textarea, form select {
   width: 100%;
   padding: 12px 15px;
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   border: 1px solid #d8d8d8;
+  background-color:white;
 }
 
 .form-group.half {

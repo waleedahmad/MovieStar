@@ -42,17 +42,35 @@
                     <a href="/contact">Contact</a>
                 </li>
 
-                <li>
-                    <a href="/admin">Admin</a>
-                </li>
+                @if(Auth::checK())
+                    @if(Auth::user()->role === 'admin')
+                        <li>
+                            <a href="/admin">Admin</a>
+                        </li>
+                    @elseif(Auth::user()->role === 'staff')
+                        <li>
+                            <a href="/admin">Admin</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="/reservations">Reservations</a>
+                        </li>
+                    @endif
+                @endif
 
-                <li>
-                    <a href="/login">Login</a>
-                </li>
+                @if(Auth::checK())
+                    <li>
+                        <a href="/logout">Logout</a>
+                    </li>
+                @else
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
 
-                <li>
-                    <a href="/register">Register</a>
-                </li>
+                    <li>
+                        <a href="/register">Register</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

@@ -9,7 +9,7 @@
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-10 content">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>Customers</h2>
+                    <h2>Reports</h2>
                     <hr class="space-40">
                     <div class="row">
 

@@ -28,6 +28,22 @@
 
   .content{
     padding-top: 20px;
+    padding-left: 20px;
+
+    .title{
+      h2, button {
+        display: inline-block;
+      }
+
+      h2{
+        border-bottom: 0px;
+      }
+
+      .btn{
+        float:right;
+        margin-bottom: 5px;
+      }
+    }
   }
 
 }
