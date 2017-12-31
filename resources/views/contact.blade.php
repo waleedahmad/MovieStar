@@ -64,7 +64,7 @@
                         </div>
                         <div class="col">
                             <h4 class="no-underline">Address</h4>
-                            <p>342 Sloane St, London, W1D 3NE</p>
+                            <p>105 Hadayatullah Block Mustafa Town</p>
                         </div>
                     </div>
                     <div class="icon-row">
@@ -75,7 +75,7 @@
                         </div>
                         <div class="col">
                             <h4 class="no-underline">Email</h4>
-                            <p>info@moviestar.co.uk</p>
+                            <p>info@moviestar.com</p>
                         </div>
                     </div>
                     <div class="icon-row">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="col">
                             <h4 class="no-underline">Telephone</h4>
-                            <p>+44 0330 123 4567</p>
+                            <p>+92 301 4377011</p>
                         </div>
                     </div>
                 </div>

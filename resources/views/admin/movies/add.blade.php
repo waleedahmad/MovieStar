@@ -220,6 +220,28 @@
                         </div>
                     </div>
 
+                    <div class="form-group {{ $errors->has('genre') ? ' has-error' : '' }}">
+                        <label for="poster" class="control-label">Genres</label>
+
+                        <div class="row">
+                            @foreach(\App\Genres::all() as $genre)
+                                <div class="col-xs-6">
+                                    <input type="checkbox"
+                                           style="margin-left: 10px; width: auto "
+                                           name="genre[]" value="{{$genre->id}}"
+                                           {{old('genre') ?  in_array($genre->id, old('genre')) ? 'checked' : '' : ''}}>
+                                    {{$genre->name}}
+                                </div>
+                            @endforeach
+                        </div>
+
+                        @if ($errors->has('genre'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('genre') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                             <span>

@@ -5,26 +5,9 @@ Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
-
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/whats-on', function () {
-    return view('whats_on');
-});
-
-Route::get('/codes', function () {
-    return view('codes');
-});
-
-Route::get('/news', function () {
-    return view('news');
-});
-
-Route::get('/news/single', function () {
-    return view('news_single');
-});
+Route::get('/', 'AppController@home');
+Route::get('/whats-on', 'AppController@whatsOn');
+Route::get('/movie/{id}', 'MovieController@getMovie');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -38,6 +21,9 @@ Route::get('/admin', 'AdminController@getIndex');
  */
 Route::get('/admin/movies', 'MovieController@getMovies');
 
+Route::post('/admin/movies/coming_soon', 'MovieController@toggleComingSoon');
+
+
 Route::get('/admin/movies/add', 'MovieController@addMovie');
 
 Route::post('/admin/movies', 'MovieController@saveMovie');
@@ -47,6 +33,11 @@ Route::delete('/admin/movies', 'MovieController@deleteMovie');
 Route::get('/admin/movies/{id}/edit', 'MovieController@editMovie');
 
 Route::post('/admin/movies/update', 'MovieController@updateMovie');
+
+
+Route::get('/admin/screenings/tickets', 'ScreeningController@getScreeningTickets');
+Route::get('/admin/screenings/{id}/reservations', 'ScreeningController@getScreeningReservations');
+
 
 
 /**
@@ -106,9 +97,20 @@ Route::delete('/admin/users', 'AdminController@deleteUser');
 
 
 /**
- * Admin (Reports) Routes
+ * Admin (Food Menu ) Routes
  */
-Route::get('/admin/reports', 'ReportsController@getReports');
+Route::get('/admin/menu', 'FoodController@getFoodItems');
+
+Route::get('/admin/menu/add', 'FoodController@addFood');
+
+Route::post('/admin/menu', 'FoodController@saveFood');
+
+Route::delete('/admin/menu', 'FoodController@deleteFood');
+
+Route::get('/admin/menu/{id}/edit', 'FoodController@editFood');
+
+Route::post('/admin/menu/update', 'FoodController@updateFood');
+
 
 
 

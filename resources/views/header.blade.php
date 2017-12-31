@@ -31,24 +31,32 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul id="menu-primary" class="nav navbar-nav" style="margin-top: -24.5px;">
-                <li class="active">
+                <li @if(Request::is('/'))class="active" @endif>
                     <a href="/">Home</a>
                 </li>
-                <li>
+                <li @if(Request::is('whats-on'))class="active" @endif>
                     <a href="/whats-on">What's on</a>
                 </li>
-                {{--<li>
-                    <a href="https://www.klevermedia.co.uk/html_templates/movie_star_html/shortcodes.html">Shortcodes</a>
-                </li>--}}
-                {{--<li class="dropdown">
-                    <a href="/news">News</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://www.klevermedia.co.uk/html_templates/movie_star_html/news-single.html">News single</a></li>
-                    </ul>
-                </li>--}}
-                <li>
+
+                <li @if(Request::is('contact'))class="active" @endif>
                     <a href="/contact">Contact</a>
                 </li>
+
+                @if(Auth::checK())
+                    @if(Auth::user()->role === 'admin')
+                        <li>
+                            <a href="/admin">Admin</a>
+                        </li>
+                    @elseif(Auth::user()->role === 'staff')
+                        <li>
+                            <a href="/admin">Admin</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="/reservations">Reservations</a>
+                        </li>
+                    @endif
+                @endif
 
                 @if(Auth::checK())
                     <li>

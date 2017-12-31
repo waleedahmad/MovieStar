@@ -8,4 +8,8 @@ class MovieShowings extends Model
 {
     protected $table = 'movie_showings';
 
+    public function movie(){
+        return $this->hasOne('App\Movies','id', 'movie_id');
+    }
+
 }

@@ -12,4 +12,16 @@ class Movies extends Model
         return $this->hasOne('App\MovieDetails', 'movie_id', 'id');
     }
 
+    public function genre(){
+        return $this->hasMany('App\MovieGenres', 'movie_id', 'id');
+    }
+
+    public function screens(){
+        return $this->hasMany('App\MovieShowings', 'movie_id', 'id');
+    }
+
+    public function soon(){
+        return $this->hasOne('App\ComingSoon', 'movie_id', 'id');
+    }
+
 }

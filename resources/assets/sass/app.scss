@@ -4,6 +4,16 @@
 @import "material-icons";
 
 
+.selectize-dropdown,
+.selectize-input,
+.selectize-input input {
+  color: #303030;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 25px;
+  -webkit-font-smoothing: inherit;
+}
+
 .admin{
   padding-top: 72px;
 
@@ -42,6 +52,35 @@
       .btn{
         float:right;
         margin-bottom: 5px;
+      }
+    }
+  }
+
+  .movies{
+    table{
+      td{
+        .image-holder{
+          width: 200px;
+          overflow:hidden;
+          img{
+            width : 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .admins, .staff, .customers{
+    table{
+      td{
+        .image-holder{
+          width: 100px;
+          height: 100px;
+          overflow:hidden;
+          img{
+            width : 100%;
+          }
+        }
       }
     }
   }

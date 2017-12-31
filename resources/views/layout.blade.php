@@ -3,10 +3,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Star - App</title>
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <link href="/lib/slick-carousel/slick/slick.css" rel="stylesheet">
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/lib/venobox/venobox/venobox.css" rel="stylesheet">
+    @yield('styles')
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <!--[if IE 9]>
     <link href="css/ie9.css" rel="stylesheet">
@@ -30,5 +32,7 @@
 <script src="/lib/venobox/venobox/venobox.min.js"></script>
 <script src="/js/font.js"></script>
 @yield('scripts')
+<script src="/lib/bootbox.js/bootbox.js"></script>
 <script src="/assets/js/app.js"></script>
+@yield('post_scripts')
 </body></html>

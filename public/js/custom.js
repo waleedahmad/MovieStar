@@ -4,7 +4,7 @@ jQuery(function ($) {
     var banner = new Headhesive('.navbar', options);
     $('.bs-carousel').carousel({interval: 10000, pause: "hover"});
     if ($(".tabs").length > 0) {
-        $('.tabs').tabs();
+        $('.tabs').tabs();/
         $('.tabs.movies').tabs({active: 2});
     }
     if ($(".accordion").length > 0) {

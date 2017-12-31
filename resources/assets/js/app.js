@@ -1,3 +1,9 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 $(function ($) {
     "use strict";
     let options = {offset: 600, classes: {clone: 'banner--clone', stick: 'banner--stick', unstick: 'banner--unstick'}};
@@ -5,7 +11,7 @@ $(function ($) {
     $('.bs-carousel').carousel({interval: 10000, pause: "hover"});
     if ($(".tabs").length > 0) {
         $('.tabs').tabs();
-        $('.tabs.movies').tabs({active: 2});
+        $('.tabs.movies').tabs();
     }
     if ($(".accordion").length > 0) {
         $('.accordion').accordion();

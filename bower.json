@@ -26,6 +26,9 @@
     "matchHeight": "matchheight#^0.7.2",
     "modernizr": "^3.5.0",
     "gmap3": "^7.2.0",
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "bootbox.js": "^4.4.0",
+    "selectize": "^0.12.4",
+    "wickedpicker": "^0.4.1"
   }
 }

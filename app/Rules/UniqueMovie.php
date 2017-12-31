@@ -8,15 +8,21 @@ use Illuminate\Contracts\Validation\Rule;
 class UniqueMovie implements Rule
 {
     private $year;
+    private $action;
+    private $id;
 
     /**
      * Create a new rule instance.
      *
      * @param $year
+     * @param $action
+     * @param null $id
      */
-    public function __construct($year)
+    public function __construct($year, $action, $id = null)
     {
         $this->year = $year;
+        $this->action = $action;
+        $this->id = $id;
     }
 
     /**
@@ -28,7 +34,16 @@ class UniqueMovie implements Rule
      */
     public function passes($attribute, $value)
     {
-        return true;
+        if($this->action === 'add'){
+            return !Movies::where('name', '=', $value)->whereHas('details', function ($query) {
+                $query->where('release_year', '=', $this->year);
+            })->count();
+        }else{
+            return !Movies::where('name', '=', $value)->where('id','!=', $this->id)->whereHas('details', function ($query) {
+                $query->where('release_year', '=', $this->year);
+            })->count();
+        }
+
     }
 
     /**
@@ -38,6 +53,6 @@ class UniqueMovie implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Movie already exists in database.';
     }
 }

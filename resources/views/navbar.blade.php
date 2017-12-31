@@ -31,14 +31,14 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul id="menu-primary" class="nav navbar-nav" style="margin-top: -24.5px;">
-                <li class="active">
+                <li @if(Request::is('/'))class="active" @endif>
                     <a href="/">Home</a>
                 </li>
-                <li>
+                <li @if(Request::is('whats-on'))class="active" @endif>
                     <a href="/whats-on">What's on</a>
                 </li>
 
-                <li>
+                <li @if(Request::is('contact'))class="active" @endif>
                     <a href="/contact">Contact</a>
                 </li>
 
