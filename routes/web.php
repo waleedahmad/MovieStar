@@ -36,6 +36,7 @@ Route::post('/admin/movies/update', 'MovieController@updateMovie');
 
 
 Route::get('/admin/screenings/tickets', 'ScreeningController@getScreeningTickets');
+
 Route::get('/admin/screenings/{id}/reservations', 'ScreeningController@getScreeningReservations');
 
 

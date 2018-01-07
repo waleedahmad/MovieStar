@@ -19,6 +19,11 @@
                 </a>
             </div>
 
+            <div>
+                <b>Tickets Count</b>: {{$screening->seats_count}} <br>
+                <b>Ticket Price</b>: Rs.{{$screening->ticket_price}} <br>
+                <b>Show Time</b>: {{\Carbon\Carbon::parse($screening->show_time)->toDayDateTimeString()}} <br>
+            </div>
 
         </div>
     </div>

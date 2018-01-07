@@ -38,6 +38,11 @@
                                             <i class="material-icons">play_arrow</i>
                                             <span>Play trailer</span>
                                         </a>
+
+                                        <a href="/movie/{{$screening->movie->id}}" class="btn btn-default">
+                                            <i class="material-icons">local_movies</i>
+                                            <span>Viewing Timings</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
