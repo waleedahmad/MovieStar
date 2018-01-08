@@ -44,7 +44,7 @@
 
                 @if(Auth::checK())
                     @if(Auth::user()->role === 'admin')
-                        <li>
+                        <li @if(Request::is('admin'))class="active" @endif>
                             <a href="/admin">Admin</a>
                         </li>
                     @elseif(Auth::user()->role === 'staff')
@@ -52,7 +52,7 @@
                             <a href="/admin">Admin</a>
                         </li>
                     @else
-                        <li>
+                        <li @if(Request::is('reservations'))class="active" @endif>
                             <a href="/reservations">Reservations</a>
                         </li>
                     @endif
@@ -63,11 +63,11 @@
                         <a href="/logout">Logout</a>
                     </li>
                 @else
-                    <li>
+                    <li @if(Request::is('login'))class="active" @endif>
                         <a href="/login">Login</a>
                     </li>
 
-                    <li>
+                    <li @if(Request::is('register'))class="active" @endif>
                         <a href="/register">Register</a>
                     </li>
                 @endif

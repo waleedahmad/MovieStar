@@ -7,7 +7,12 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/', 'AppController@home');
 Route::get('/whats-on', 'AppController@whatsOn');
+
 Route::get('/movie/{id}', 'MovieController@getMovie');
+Route::get('/reserve/screening/{id}', 'ReservationController@getReservationForm');
+Route::post('/reserve/screening/{id}', 'ReservationController@reserveTickets');
+Route::get('/reservations/', 'ReservationController@getReservations');
+
 
 Route::get('/contact', function () {
     return view('contact');

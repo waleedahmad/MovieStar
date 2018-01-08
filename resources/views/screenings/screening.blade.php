@@ -29,6 +29,9 @@
                     @if($days[\Carbon\Carbon::parse($s->show_time)->dayOfWeek] === $day)
                     <div class="time">
                         {{\Carbon\Carbon::parse($s->show_time)->toDayDateTimeString()}}
+                        <a href="/reserve/screening/{{$screening->id}}" style="float:right;">
+                            Reserve Tickets
+                        </a>
                     </div>
                     @endif
                 @endforeach

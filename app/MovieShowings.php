@@ -12,4 +12,8 @@ class MovieShowings extends Model
         return $this->hasOne('App\Movies','id', 'movie_id');
     }
 
+    public function reservations(){
+        return $this->hasMany('App\Reservations','showings_id', 'id');
+    }
+
 }

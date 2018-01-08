@@ -41,7 +41,7 @@
 
                                         <a href="/movie/{{$screening->movie->id}}" class="btn btn-default">
                                             <i class="material-icons">local_movies</i>
-                                            <span>Viewing Timings</span>
+                                            <span>Screening Timings</span>
                                         </a>
                                     </div>
                                 </div>

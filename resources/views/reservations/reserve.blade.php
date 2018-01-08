@@ -6,7 +6,7 @@
 
         @include('navbar')
 
-        <div id="content_hero" style="background-image: url({{'/storage/'.$movie->details->poster_uri}})">
+        <div id="content_hero" style="background-image: url({{'/storage/'.$screening->movie->details->poster_uri}})">
             <img src="/img/scroll-arrow.svg" alt="Scroll down" class="scroll">
 
             <div class="container">
@@ -14,17 +14,17 @@
                      data-translatey="100">
                     <div class="col-md-9">
                         <span class="title">
-                            @foreach($movie->genre as $genre)
+                            @foreach($screening->movie->genre as $genre)
                                 @if($loop->iteration != 1),@endif {{$genre->info->name}}
                             @endforeach
                         </span>
-                        <h1>{{$movie->name}}</h1>
-                        <p>{{$movie->details->description}}</p>
+                        <h1>{{$screening->movie->name}}</h1>
+                        <p>{{$screening->movie->details->description}}</p>
                         <div class="buttons">
                             <span class="certificate">
-                                {{$movie->details->audience}}
+                                {{$screening->movie->details->audience}}
                             </span>
-                            <a href="{{$movie->details->youtube_url}}" data-vbtype="video"
+                            <a href="{{$screening->movie->details->youtube_url}}" data-vbtype="video"
                                class="venobox btn btn-default vbox-item">
                                 <i class="material-icons">play_arrow</i>
                                 <span>Play trailer</span>
@@ -38,45 +38,42 @@
         <div class="container section single-movie">
             <div class="row">
                 <div class="col-sm-7">
-                    <h2>Synopsis</h2>
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <img src="{{'/storage/'.$movie->details->image_uri}}" alt="{{$movie->name}}" class="poster">
-                            <div class="share">
-                                @if($movie->details->facebook)
-                                    <a href="{{$movie->details->facebook}}">
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                    </a>
-                                @endif
+                    <h2>Reserve Tickets For: {{\Carbon\Carbon::parse($screening->show_time)->toDayDateTimeString()}}</h2>
+                    <div class="row col-sm-12 col-md-12 col-lg-12">
+                        <form method="post" action="/reserve/screening/{{$screening->id}}" style="padding: 0px;" enctype="multipart/form-data">
+                            {{ csrf_field() }}
 
-                                @if($movie->details->twitter)
-                                        <a href="{{$movie->details->twitter}}">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </a>
-                                @endif
+                            <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="control-label">How many tickets you want to reserve for <b>{{$screening->movie->name}}</b>?</label>
 
+                                <div class="">
+                                    <input id="name" type="text" name="tickets" value="{{ old('tickets') }}">
+
+                                    @if ($errors->has('tickets'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('tickets') }}</strong>
+                                </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-7">
-                            <h3 class="no-underline">The plot</h3>
-                            <p>
-                                {{$movie->details->plot}}
-                            </p>
-                            <ul class="movie-info">
 
-                                <li><i>Director</i> {{$movie->details->director}}</li>
-                                <li><i>Starring</i> {{$movie->details->starring}}</li>
-                                <li><i>Release date</i> {{$movie->details->release_year}}</li>
-                                <li><i>Running time</i> {{$movie->details->running_time}} mins</li>
-                            </ul>
-                        </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">
+                                    <span>
+                                        Reserve Tickets
+                                    </span>
+                                </button>
+                            </div>
+
+
+                        </form>
                     </div>
                 </div>
                 <div class="col-sm-4 col-sm-push-1">
                     <h2>Viewing times</h2>
                     <ul class="show-times">
                         <li>
-                            @foreach($movie->screens as $s)
+                            @foreach($screening->movie->screens as $s)
                                 <span class="time">
                                     {{\Carbon\Carbon::parse($s->show_time)->toDayDateTimeString()}}
                                     <a href="/reserve/screening/{{$s->id}}" style="clear:both;">Reserve Tickets</a>
@@ -91,7 +88,7 @@
         <section class="dark">
             <div class="container section remove-bottom-padding">
                 <h2>
-                    {{$movie->name}} {{$movie->details->release_year }} Trailer
+                    {{$screening->movie->name}} {{$screening->movie->details->release_year }} Trailer
                 </h2>
                 <div class="row comingSoon-slides singleGallery">
                     <div class="col-sm-12">
@@ -100,7 +97,7 @@
                                 <a href="https://youtu.be/AntcyqJ6brc" data-vbtype="video"
                                    class="venobox video vbox-item hoverZoomLink">
                                     <i class="material-icons">play_arrow</i>
-                                    <img src="{{'/storage/'.$movie->details->poster_uri}}" alt="">
+                                    <img src="{{'/storage/'.$screening->movie->details->poster_uri}}" alt="">
                                 </a>
                             </div>
                         </div>

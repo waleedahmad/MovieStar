@@ -56,20 +56,6 @@
     }
   }
 
-  .movies{
-    table{
-      td{
-        .image-holder{
-          width: 200px;
-          overflow:hidden;
-          img{
-            width : 100%;
-          }
-        }
-      }
-    }
-  }
-
   .admins, .staff, .customers{
     table{
       td{
@@ -84,6 +70,21 @@
       }
     }
   }
+}
 
+.admin,.user{
+  .movies{
+    table{
+      td{
+        .image-holder{
+          width: 200px;
+          overflow:hidden;
+          img{
+            width : 100%;
+          }
+        }
+      }
+    }
+  }
 }
 

@@ -1709,7 +1709,7 @@ ul.show-times {
 }
 
 ul.show-times li {
-  display: table;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -1729,13 +1729,38 @@ ul.show-times li.today i {
 
 ul.show-times li .time {
   font-size: 14px;
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin: 0 5px 5px 0;
   padding: 7px 10px;
   letter-spacing: 2px;
   color: #717171;
   border-radius: 5px;
   background-color: #d8d8d8;
+
+  a{
+    float:right;
+    display: none;
+  }
+
+  &:hover{
+    a{
+      display: inline-block;
+    }
+  }
+}
+
+.time{
+  a{
+    float:right;
+    display: none;
+  }
+
+  &:hover{
+    a{
+      display: inline-block;
+    }
+  }
 }
 
 ul.show-times li .time.past {
