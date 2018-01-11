@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
             'role'  =>  'admin',
             'phone_no' => '03014377011',
             'gender'    =>  'male',
-            'image_uri' =>  'default/male.jpg'
+            'image_uri' =>  'default/profile.jpg'
         ]);
 
         echo 'Admins Seeded';
