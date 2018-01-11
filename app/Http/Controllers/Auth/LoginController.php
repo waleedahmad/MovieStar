@@ -42,11 +42,11 @@ class LoginController extends Controller
     {
         switch($user->role){
             case 'admin' :
-                return redirect('/admin');
+                return redirect()->intended('/admin');
             case 'user' :
-                return redirect('/');
+                return redirect()->intended('/');;
             case 'staff' :
-                return redirect('/admin');
+                return redirect()->intended('/admin');;
         }
     }
 }

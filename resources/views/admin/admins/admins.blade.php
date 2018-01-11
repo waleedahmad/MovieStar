@@ -6,7 +6,7 @@
 
         @include('admin.sidebar')
 
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-10 content admins">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-10 content staff">
             <div class="title">
                 <h2>
                     Administrators

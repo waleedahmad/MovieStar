@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Movies extends Model
@@ -17,7 +18,7 @@ class Movies extends Model
     }
 
     public function screens(){
-        return $this->hasMany('App\MovieShowings', 'movie_id', 'id');
+        return $this->hasMany('App\Screenings', 'movie_id', 'id')->where('show_time','>', Carbon::now()->toDateTimeString());
     }
 
     public function soon(){

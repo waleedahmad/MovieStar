@@ -136,7 +136,7 @@
 
         $('#showing-time').wickedpicker({
             twentyFour: true,
-            title : 'Showing time',
-        });
+    title : 'Showing time',
+    });
     </script>
 @endSection

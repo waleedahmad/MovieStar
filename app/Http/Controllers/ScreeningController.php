@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\MovieShowings;
+use App\Screenings;
+use App\Reservations;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class ScreeningController extends Controller
 
     public function getScreenings()
     {
-        $screenings = MovieShowings::all();
+        $screenings = Screenings::orderBy('show_time', 'DESC')->get();
         return view('admin.screenings.screenings')->with('screenings', $screenings);
     }
 
@@ -41,7 +42,7 @@ class ScreeningController extends Controller
         ]);
 
         if($validator->passes()){
-            $showing = new MovieShowings();
+            $showing = new Screenings();
             $showing->movie_id = $request->movie;
             $showing->seats_count = $request->tickets_count;
             $showing->ticket_price = $request->ticket_price;
@@ -59,7 +60,7 @@ class ScreeningController extends Controller
 
     public function deleteScreening(Request $request)
     {
-        $screening = MovieShowings::find($request->id);
+        $screening = Screenings::find($request->id);
 
         return response()->json([
             'deleted'   => $screening->delete()
@@ -69,7 +70,7 @@ class ScreeningController extends Controller
 
     public function editScreening($id)
     {
-        $screening = MovieShowings::find($id);
+        $screening = Screenings::find($id);
         return view('admin.screenings.edit')->with('screening', $screening);
     }
 
@@ -84,7 +85,7 @@ class ScreeningController extends Controller
         ]);
 
         if($validator->passes()){
-            $showing = MovieShowings::find($request->id);
+            $showing = Screenings::find($request->id);
             $showing->movie_id = $request->movie;
             $showing->seats_count = $request->tickets_count;
             $showing->ticket_price = $request->ticket_price;
@@ -99,13 +100,6 @@ class ScreeningController extends Controller
         }
     }
 
-    public function getScreeningTickets(){
-        $screenings = MovieShowings::all();
-        return view('admin.reservations.screenings')->with('screenings', $screenings);
-    }
 
-    public function getScreeningReservations($id){
-        $screening = MovieShowings::find($id);
-        return view('admin.reservations.screening')->with('screening', $screening);
-    }
+
 }

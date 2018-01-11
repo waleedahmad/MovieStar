@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MovieShowings extends Model
+class Screenings extends Model
 {
     protected $table = 'movie_showings';
 

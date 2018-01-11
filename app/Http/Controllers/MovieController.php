@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\ComingSoon;
 use App\MovieDetails;
 use App\Movies;
-use App\MovieShowings;
+use App\Screenings;
 use App\Rules\UniqueMovie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;

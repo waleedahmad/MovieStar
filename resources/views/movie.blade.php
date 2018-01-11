@@ -50,9 +50,9 @@
                                 @endif
 
                                 @if($movie->details->twitter)
-                                        <a href="{{$movie->details->twitter}}">
-                                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </a>
+                                    <a href="{{$movie->details->twitter}}">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
                                 @endif
 
                             </div>
@@ -97,7 +97,7 @@
                     <div class="col-sm-12">
                         <div class="row single-slide slideOne" style="opacity: 0; height: 0px; padding-bottom: 0px;">
                             <div class="col-sm-12 slide-video">
-                                <a href="https://youtu.be/AntcyqJ6brc" data-vbtype="video"
+                                <a href="{{$movie->details->youtube_url}}" data-vbtype="video"
                                    class="venobox video vbox-item hoverZoomLink">
                                     <i class="material-icons">play_arrow</i>
                                     <img src="{{'/storage/'.$movie->details->poster_uri}}" alt="">

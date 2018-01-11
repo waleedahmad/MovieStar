@@ -11,6 +11,10 @@ class Reservations extends Model
     protected $fillable = ['user_id', 'paid', 'tickets_count'];
 
     public function screening(){
-        return $this->hasOne('App\MovieShowings','id', 'showings_id');
+        return $this->hasOne('App\Screenings','id', 'showings_id');
+    }
+
+    public function user(){
+        return $this->hasOne('App\User', 'id', 'user_id');
     }
 }

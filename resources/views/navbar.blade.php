@@ -52,6 +52,14 @@
                             <a href="/admin">Admin</a>
                         </li>
                     @else
+
+                        <li class="dropdown">
+                            <a href="https://www.klevermedia.co.uk/html_templates/movie_star_html/news.html">Food</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/food/menu">Menu</a></li>
+                                <li><a href="/food/order">Your Orders</a></li></ul>
+                        </li>
+
                         <li @if(Request::is('reservations'))class="active" @endif>
                             <a href="/reservations">Reservations</a>
                         </li>

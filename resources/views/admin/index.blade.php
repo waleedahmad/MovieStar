@@ -23,7 +23,7 @@
                                 <div class="icon-box">
                                     <i class="material-icons">watch_later</i>
                                     <h4>Screening</h4>
-                                    <h4>{{\App\MovieShowings::count()}}</h4>
+                                    <h4>{{\App\Screenings::count()}}</h4>
 
                                 </div>
                             </div>

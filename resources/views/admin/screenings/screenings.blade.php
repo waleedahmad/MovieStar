@@ -70,6 +70,7 @@
 
                                 <td>
                                     {{\Carbon\Carbon::parse($screening->show_time)->toDayDateTimeString()}}
+                                    {{\Carbon\Carbon::now()->diffInSeconds(\Carbon\Carbon::parse($screening->show_time) , false) < 0 ? '(PAST)' : ''}}
                                 </td>
 
                                 <td>
