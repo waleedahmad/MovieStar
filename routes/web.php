@@ -37,6 +37,9 @@ Route::group(['middleware' => ['auth', 'is_user']], function(){
 
     Route::post('/food/order/cancel', 'FoodController@cancelOrder');
 
+    Route::get('/settings', 'UserController@getSettings');
+    Route::post('/settings', 'UserController@updateSettings');
+
 });
 
 
@@ -47,6 +50,8 @@ Route::get('/contact', function () {
 
 Route::group(['middleware' => ['auth', 'is_admin_or_staff']], function(){
     Route::get('/admin', 'AdminController@getIndex');
+    Route::get('/admin/settings', 'AdminController@getSettings');
+    Route::post('/admin/settings', 'AdminController@updateSettings');
 });
 
 

@@ -62,7 +62,7 @@
             @else
                 No food items in cart.
             @endif
-            
+
         </div>
     </div>
 @endSection

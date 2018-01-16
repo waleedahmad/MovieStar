@@ -24,11 +24,11 @@
         <i class="material-icons">account_circle</i> Customers
     </a>
 
-    @if(Auth::user()->role === 'admin')
+    {{--@if(Auth::user()->role === 'admin')
         <a @if(Request::is('admin/reports*')) class="active" @endif href="/admin/reports">
             <i class="material-icons">assessment</i> Reports
         </a>
-    @endif
+    @endif--}}
 
     @if(Auth::user()->role === 'staff')
         <a @if(Request::is('admin/screenings*')) class="active" @endif href="/admin/screenings/tickets">
@@ -44,6 +44,10 @@
                 <i class="material-icons">restaurant_menu</i> Food Orders
             </a>
     @endif
+
+        <a @if(Request::is('admin/settings*')) class="active" @endif href="/admin/settings">
+            <i class="material-icons">settings</i> Settings
+        </a>
 
 
 

@@ -68,8 +68,16 @@
                             </ul>
                         </li>
 
-                        <li @if(Request::is('reservations'))class="active" @endif>
-                            <a href="/reservations">Reservations</a>
+                        <li class="dropdown @if(Request::is('settings')) active @endif">
+                            <a href="#">{{Auth::user()->name}}</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/reservations">Reservations</a>
+                                </li>
+                                <li>
+                                    <a href="/settings">Settings</a>
+                                </li>
+                            </ul>
                         </li>
                     @endif
                 @endif

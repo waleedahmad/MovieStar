@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -130,5 +131,39 @@ class AdminController extends Controller
             return Storage::disk('public')->delete($image);
         }
         return true;
+    }
+
+    public function getSettings(){
+        return view('admin.settings');
+    }
+
+    public function updateSettings(Request $request){
+        $validator = \Validator::make($request->all(), [
+            'name'  =>  'required',
+            'email' =>  'required|email|unique:users,email,'.Auth::user()->id,
+            'phone_no' => 'required',
+            'gender' => 'required',
+            'photo' => $request->hasFile('photo') ? 'required|image' : ''
+        ]);
+
+
+        if($validator->passes()){
+            $admin = User::find(Auth::user()->id);
+
+            if($request->hasFile('photo')){
+                $this->deleteImage($admin->image_uri);
+            }
+            $admin->name = $request->name;
+            $admin->email = $request->email;
+            $admin->phone_no = $request->phone_no;
+            $admin->gender = $request->gender;
+            $admin->image_uri = $request->hasFile('photo') ? $this->saveImageAndGetURI($request->photo) : $admin->image_uri;
+
+            if($admin->save()){
+                return redirect('/admin/settings');
+            }
+        }else{
+            return redirect('/admin/settings')->withErrors($validator)->withInput();
+        }
     }
 }
