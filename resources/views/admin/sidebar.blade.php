@@ -39,6 +39,10 @@
         <a @if(Request::is('admin/menu*')) class="active" @endif href="/admin/menu">
             <i class="material-icons">restaurant_menu</i> Food Menu
         </a>
+
+            <a @if(Request::is('admin/orders*')) class="active" @endif href="/admin/orders">
+                <i class="material-icons">restaurant_menu</i> Food Orders
+            </a>
     @endif
 
 

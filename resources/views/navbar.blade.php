@@ -53,11 +53,19 @@
                         </li>
                     @else
 
-                        <li class="dropdown">
-                            <a href="https://www.klevermedia.co.uk/html_templates/movie_star_html/news.html">Food</a>
+                        <li class="dropdown @if(Request::is('food*')) active @endif">
+                            <a href="#">Food</a>
                             <ul class="dropdown-menu">
-                                <li><a href="/food/menu">Menu</a></li>
-                                <li><a href="/food/order">Your Orders</a></li></ul>
+                                <li>
+                                    <a href="/food/menu">Menu</a>
+                                </li>
+                                <li>
+                                    <a href="/food/checkout">Checkout</a>
+                                </li>
+                                <li>
+                                    <a href="/food/orders">Your Orders</a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li @if(Request::is('reservations'))class="active" @endif>

@@ -22,6 +22,21 @@ Route::group(['middleware' => ['auth', 'is_user']], function(){
 
     Route::post('/reserve/screening/{id}', 'ReservationController@reserveTickets');
 
+    Route::get('/food/menu', 'FoodController@getUserMenu');
+
+    Route::get('/food/orders', 'FoodController@getUserOrders');
+    Route::get('/food/orders/{id}', 'FoodController@getUserOrder');
+
+    Route::get('/food/checkout', 'FoodController@getCheckoutItems');
+
+    Route::delete('/food/checkout', 'FoodController@deleteCheckoutItem');
+
+    Route::post('/food/checkout', 'FoodController@processCheckout');
+
+    Route::post('/food/order', 'FoodController@addToCart');
+
+    Route::post('/food/order/cancel', 'FoodController@cancelOrder');
+
 });
 
 
@@ -149,6 +164,22 @@ Route::group(['middleware' => ['auth', 'is_staff']], function(){
     Route::get('/admin/menu/{id}/edit', 'FoodController@editFood');
 
     Route::post('/admin/menu/update', 'FoodController@updateFood');
+
+
+    /**
+     * Working
+     */
+
+    Route::get('/admin/orders', 'FoodController@getOrders');
+
+    Route::get('/admin/orders/{id}', 'FoodController@getSingleOrder');
+
+    Route::delete('/admin/order', 'FoodController@deleteOrder');
+
+    Route::post('/order/complete', 'FoodController@markOrderCompleted');
+
+    Route::post('/order/paid', 'FoodController@markOrderPaid');
+
 
 });
 
