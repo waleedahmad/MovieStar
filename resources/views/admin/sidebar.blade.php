@@ -19,11 +19,6 @@
         </a>
     @endif
 
-
-    <a @if(Request::is('admin/users*')) class="active" @endif href="/admin/users">
-        <i class="material-icons">account_circle</i> Customers
-    </a>
-
     {{--@if(Auth::user()->role === 'admin')
         <a @if(Request::is('admin/reports*')) class="active" @endif href="/admin/reports">
             <i class="material-icons">assessment</i> Reports
@@ -31,6 +26,11 @@
     @endif--}}
 
     @if(Auth::user()->role === 'staff')
+
+        <a @if(Request::is('admin/users*')) class="active" @endif href="/admin/users">
+            <i class="material-icons">account_circle</i> Customers
+        </a>
+
         <a @if(Request::is('admin/screenings*')) class="active" @endif href="/admin/screenings/tickets">
             <i class="material-icons">view_list</i> Screening Tickets
         </a>
